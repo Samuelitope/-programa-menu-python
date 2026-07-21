@@ -12,7 +12,7 @@ REGLAS_PROMOCION = {
     "postres": {"umbral": 8000.0, "descuento": 0.20},
 }
 
-
+#Funcion 1 para definir el precio final con parametros para llevar y recargo
 def calcular_precio_final(
     categoria, precio_base, reglas_promocion, para_llevar=False, recargo_para_llevar=1000.0
 ):
@@ -51,7 +51,7 @@ def calcular_precio_final(
         costo_empaque,
     )
 
-
+#Funcion 2 para mostrar el menu organizandolo en columnas luego enumerandolas empezando desde 1
 def mostrar_menu(menu):
     print("=" * 65)
     print(" MENÚ DE PRODUCTOS ".center(65, "="))
@@ -64,7 +64,7 @@ def mostrar_menu(menu):
         print(f"{i:<4} | {nombre:<26} | {categoria:<15} | ${precio:>10,.2f}")
     print("=" * 65)
 
-
+#Funcion 3 para leer un entero en un rango definido por el usuario, con manejo de errores 
 def leer_entero_en_rango(mensaje, minimo, maximo):
     while True:
         try:
@@ -77,7 +77,7 @@ def leer_entero_en_rango(mensaje, minimo, maximo):
                 "Error: Entrada inválida. Ingresa un número entero (int/número sin decimales)."
             )
 
-
+#Funcion 4  lee en booleano si el usuario desea el pedido para llevar o no, con manejo de errores
 def leer_booleano_si_no(mensaje):
     while True:
         respuesta = input(mensaje).strip().lower()
@@ -88,6 +88,8 @@ def leer_booleano_si_no(mensaje):
         print("Error: Responde 's' para Sí o 'n' para No.")
 
 
+#Variable 'main' para ejecutar el programa principal, mostrando el menu, solicitando la seleccion 
+#del producto y calculando el precio final con descuentos y recargos
 if __name__ == "__main__":
     menu = [
         ["Hamburguesa Especial", "Comida Rápida", 18000],
@@ -100,7 +102,7 @@ if __name__ == "__main__":
 
     mostrar_menu(menu)
 
-    # 1. Selección del producto por índice
+    # 1. Selección del producto por índice y cuenta cuantos elementos tiene la coleccion 
     print("\n--- SELECCIÓN DE PRODUCTO ---")
     opcion_producto = leer_entero_en_rango(
         f"Elige el número del producto a consultar (1-{len(menu)}): ",
