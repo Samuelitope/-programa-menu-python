@@ -45,4 +45,25 @@ python main.py
 
 ---
 
+## 💻 Comandos para Subir el Código a GitHub
 
+Si deseas inicializar o actualizar este proyecto en tu repositorio remoto de GitHub, ejecuta los siguientes comandos en tu terminal:
+
+```bash
+# 1. Inicializar el repositorio local (si no se ha hecho previamente)
+git init
+
+# 2. Agregar los archivos al área de preparación (staging area)
+git add main.py README.md
+
+# 3. Registrar los cambios con un mensaje explicativo
+git commit -m "feat: implementa seleccion automatica de umbral y opcion para llevar"
+
+# 4. Establecer la rama principal
+git branch -M main
+
+# 5. Vincular el repositorio local con el remoto en GitHub
+git remote add origin https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+
+# 6. Subir los cambios a GitHub
+git push -u origin main
